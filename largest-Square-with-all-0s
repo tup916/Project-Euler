@@ -1,0 +1,73 @@
+This question involved dynamic programming to calculate the size of the largest possible square inside an nxn matrix.
+
+public class input {
+
+	
+	public static void main (String args[]){
+		
+		int side = 5;
+		int matrix[][] = new int[side][side];
+		for (int i=0; i<side; i++){
+			for (int j=0; j<side; j++){
+				matrix[i][j] = 0;
+			}
+		}
+		
+		matrix[3][2] = 1;
+		matrix[2][3] = 1;
+		
+		int max0s[][] = new int[side][side];
+		for (int i=0; i<side; i++){
+			for (int j=0; j<side; j++){
+				max0s[i][j] = 0;
+			}
+		}
+		
+		for (int col=0; col<side; col++){
+			if (matrix[side-1][col] == 0){
+				max0s[side-1][col] = 1;
+			}
+		}
+		
+		for (int row=0; row<side-1; row++){
+			if (matrix[row][side-1] == 0){
+				max0s[row][side-1] = 1;
+			}
+		}
+		
+		for (int row=side-2; row>=0; row--){
+			for (int col=side-2; col>=0; col--){
+				if (matrix[row][col] == 0){
+					max0s[row][col] = 1 + Math.min(max0s[row+1][col], Math.min(max0s[row+1][col+1], max0s[row][col+1]));
+				}
+			}
+		}
+		
+//		System.out.println("Original matrix:");
+//		for (int i=0; i<side; i++){
+//			for (int j=0; j<side; j++){
+//				System.out.print(matrix[i][j]+ " ");
+//			}
+//			System.out.println("");
+//		}
+//		
+//		System.out.println("Storage Values:");
+//		for (int i=0; i<side; i++){
+//			for (int j=0; j<side; j++){
+//				System.out.print(max0s[i][j]+ " ");
+//			}
+//			System.out.println("");
+//		}
+		
+		int maximum = max0s[0][0];
+		for (int i=0; i<side; i++){
+			for (int j=0; j<side; j++){
+				if (maximum < max0s[i][j]){
+					maximum = max0s[i][j];
+				}
+			}
+		}
+		
+		System.out.println("Biggest 0 square = " + maximum);
+	}
+}
