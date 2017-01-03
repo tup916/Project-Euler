@@ -101,6 +101,7 @@ public class maximumSubtreeInRange {
 		t.left.left.right.right.right.right = new Tree(18);
 		
 		System.out.println("4 == " + maxSubtree(t, 13, 29));
+		System.out.println("7 == " + maxSubtree(t, 0, 100));
 				
 	}
 }
