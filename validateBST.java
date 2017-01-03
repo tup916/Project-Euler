@@ -1,4 +1,7 @@
 
+// Question taken from Cracking the Coding Interview
+//Implement a function to check if a BinaryTree is a binarySearchTree.
+
 public class validateBST {
 
 	public static class BinaryTree{
