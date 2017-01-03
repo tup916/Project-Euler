@@ -1,4 +1,4 @@
-// Given a tree and a range in integer A, B, return the maximum size of the subtree fully contained in the tree with all nodes in 
+// Given a tree and a range in integer A, B, return the maximum height of the subtree fully contained in the tree with all nodes in 
 // the specified range. The nodes should be inclusive of both A and B.
 
 
@@ -101,8 +101,6 @@ public class maximumSubtreeInRange {
 		t.left.left.right.right.right.right = new Tree(18);
 		
 		System.out.println("4 == " + maxSubtree(t, 13, 29));
-		
-		
-		
+				
 	}
 }
