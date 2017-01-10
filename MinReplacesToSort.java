@@ -98,11 +98,19 @@ public class MinReplacesToSort {
 	public static void main(String[] args) {
 		int [] arrayArg1 = {10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60};
 		Pair<Integer, Integer> answer = printUnsorted(arrayArg1) ;
-		System.out.println(answer.first + " " + answer.second);
+		if (answer != null)		System.out.println(answer.first + " " + answer.second);
+		else					System.out.println("Already sorted.");
 		
 		
-		int [] arrayArg2 = {0, 1, 15, 25, 6, 7, 30, 40, 50};
+		int [] arrayArg2 = {0, 1};
 		answer = printUnsorted(arrayArg2) ;
-		System.out.println(answer.first + " " + answer.second);
+		if (answer != null)		System.out.println(answer.first + " " + answer.second);
+		else					System.out.println("Already sorted.");
+		
+		
+		int [] arrayArg3 = {0, 1, 15, 25, 6, 7, 30, 40, 50};
+		answer = printUnsorted(arrayArg3) ;
+		if (answer != null)		System.out.println(answer.first + " " + answer.second);
+		else					System.out.println("Already sorted.");
 	}
 }
