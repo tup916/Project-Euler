@@ -1,0 +1,35 @@
+/*  
+   class Node
+      public  int frequency; // the frequency of this tree
+       public  char data;
+       public  Node left, right;
+    
+*/ 
+
+void decode(String S ,Node root)
+    {
+        int ptrIndex = 0;
+        Node current = root;
+        while (ptrIndex != S.length()) {
+            
+            
+            // if not a leaf
+            if (S.charAt(ptrIndex) == '0') {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+            
+            // if a leaf
+            if (current.left == null && current.right == null) {
+                System.out.print(current.data);
+                current = root;
+                ptrIndex ++;
+                continue;
+            }
+            
+            ptrIndex ++;
+        }
+
+       
+    }
